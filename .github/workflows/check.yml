@@ -1,0 +1,21 @@
+name: check
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+jobs:  
+  test:  
+    runs-on: ubuntu-latest  
+    continue-on-error: true  
+    steps:  
+      - name: Checkout code  
+        uses: actions/checkout@v4  
+      - name: Set up Python  
+        uses: actions/setup-python@v4  
+        with:  
+          python-version: '3.9'  
+      - name: Use API Key   
+        run: echo "The API key is ${{ secrets.ZHIPU_API_KEY }}"
