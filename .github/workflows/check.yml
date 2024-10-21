@@ -21,9 +21,12 @@ jobs:
         run: echo "The API key is ${{ secrets.ZHIPU_API_KEY }}"
       - name: new file
         run: python ChatGLM.py
-      - name: git action
-        run: git add .
-             git commit -m "Run TestAgent"
-             git push origin main
-
+      - name: Add changes to the staging area  
+        run: git add .  
+        
+      - name: Commit changes  
+        run: git commit -m "Run TestAgent"  
+        
+      - name: Push changes to the remote repository  
+        run: git push origin main
         
