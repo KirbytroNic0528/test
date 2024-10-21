@@ -19,3 +19,11 @@ jobs:
           python-version: '3.9'  
       - name: Use API Key   
         run: echo "The API key is ${{ secrets.ZHIPU_API_KEY }}"
+      - name: new file
+        run: python ChatGLM.py
+      - name: git action
+        run: git add .
+             git commit -m "Run TestAgent"
+             git push origin main
+
+        
